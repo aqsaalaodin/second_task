@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Intern registration form and education summary table">
+  <title>Intern Registration Form</title>
+</head>
+<body>
+
+  <header>
+    <h1>Intern Registration Form</h1>
+    <p>
+      <strong>Welcome!</strong> Thank you for your interest in our internship program.
+      Please fill in every section below carefully. Fields marked with
+      <em>(required)</em> must be completed before you can submit the form.
+      At the bottom of the page you will find a summary table of the
+      courses covered during the internship.
+    </p>
+    <hr>
+  </header>
+
+  <main>
+
+    <section id="registration">
+      <h2>Registration Form</h2>
+
+      <form action="#" method="post" enctype="multipart/form-data">
+
+        <!-- ================= Personal Information ================= -->
+        <fieldset>
+          <legend>Personal Information</legend>
+
+          <p>
+            <label for="first-name">First Name (required):</label><br>
+            <input type="text" id="first-name" name="first_name" placeholder="e.g. Ali"
+                   autocomplete="given-name" minlength="2" maxlength="30" required>
+          </p>
+
+          <p>
+            <label for="last-name">Last Name (required):</label><br>
+            <input type="text" id="last-name" name="last_name" placeholder="e.g. Khan"
+                   autocomplete="family-name" minlength="2" maxlength="30" required>
+          </p>
+
+          <p>
+            <label for="dob">Date of Birth (required):</label><br>
+            <input type="date" id="dob" name="dob" min="1980-01-01" max="2008-12-31"
+                   autocomplete="bday" required>
+          </p>
+
+          <p>
+            Gender:<br>
+            <input type="radio" id="gender-male" name="gender" value="male">
+            <label for="gender-male">Male</label>
+            <input type="radio" id="gender-female" name="gender" value="female">
+            <label for="gender-female">Female</label>
+            <input type="radio" id="gender-other" name="gender" value="other">
+            <label for="gender-other">Other</label>
+          </p>
+        </fieldset>
+
+        <br>
+
+        <!-- ================= Contact Information ================= -->
+        <fieldset>
+          <legend>Contact Information</legend>
+
+          <p>
+            <label for="email">Email Address (required):</label><br>
+            <input type="email" id="email" name="email" placeholder="name@example.com"
+                   autocomplete="email" size="35" required>
+          </p>
+
+          <p>
+            <label for="phone">Phone Number (required):</label><br>
+            <input type="tel" id="phone" name="phone" placeholder="0300-1234567"
+                   pattern="03[0-9]{2}-?[0-9]{7}" title="Enter a mobile number like 0300-1234567"
+                   autocomplete="tel" required>
+          </p>
+
+          <p>
+            <label for="address">Address / Additional Notes:</label><br>
+            <textarea id="address" name="address" rows="5" cols="45" maxlength="300"
+                      placeholder="Write your full address or any note for us here..."
+                      autocomplete="street-address"></textarea>
+          </p>
+        </fieldset>
+
+        <br>
+
+        <!-- ================= Account ================= -->
+        <fieldset>
+          <legend>Account Details</legend>
+
+          <p>
+            <label for="password">Password (required):</label><br>
+            <input type="password" id="password" name="password" placeholder="Minimum 8 characters"
+                   minlength="8" maxlength="20" autocomplete="new-password" required>
+          </p>
+
+          <p>
+            <label for="search">Search Our Departments:</label><br>
+            <input type="search" id="search" name="department_search" list="departments"
+                   placeholder="Type a department name" autocomplete="off" size="30">
+            <datalist id="departments">
+              <option value="Web Development">
+              <option value="Graphic Design">
+              <option value="Data Analysis">
+              <option value="Digital Marketing">
+              <option value="Quality Assurance">
+            </datalist>
+          </p>
+        </fieldset>
+
+        <br>
+
+        <!-- ================= Internship Preferences ================= -->
+        <fieldset>
+          <legend>Internship Preferences</legend>
+
+          <p>
+            <label for="interview-time">Preferred Interview Time (required):</label><br>
+            <input type="time" id="interview-time" name="interview_time"
+                   min="09:00" max="17:00" step="900" required>
+            <br>
+            <small>Interviews are held between 09:00 and 17:00.</small>
+          </p>
+
+          <p>
+            <label for="training-month">Preferred Training Month (required):</label><br>
+            <input type="month" id="training-month" name="training_month"
+                   min="2026-12" max="2027-12" required>
+          </p>
+
+          <p>
+            <label for="training-week">Preferred Training Week:</label><br>
+            <input type="week" id="training-week" name="training_week"
+                   min="2026-W50" max="2027-W52">
+          </p>
+
+          <p>
+            <label for="color">Favourite Color (for your ID card):</label><br>
+            <input type="color" id="color" name="favorite_color" value="#3366cc">
+          </p>
+
+          <p>
+            <label for="skill-level">Skill Level (0 = beginner, 10 = expert):</label><br>
+            0 <input type="range" id="skill-level" name="skill_level"
+                     min="0" max="10" step="1" value="5"> 10
+          </p>
+
+          <p>
+            Preferred Training Mode (required):<br>
+            <input type="radio" id="mode-onsite" name="training_mode" value="onsite" required>
+            <label for="mode-onsite">On-site</label>
+            <input type="radio" id="mode-remote" name="training_mode" value="remote">
+            <label for="mode-remote">Remote</label>
+          </p>
+        </fieldset>
+
+        <br>
+
+        <!-- ================= Selections ================= -->
+        <fieldset>
+          <legend>Milestones and Departments</legend>
+
+          <p>
+            <label for="milestone">Current Milestone (required):</label><br>
+            <select id="milestone" name="milestone" required>
+              <option value="">-- Select a milestone --</option>
+              <option value="orientation">Orientation</option>
+              <option value="first-task" selected>First Task Submission</option>
+              <option value="mid-review">Mid-term Review</option>
+              <option value="final-project">Final Project</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="department">Preferred Department (hold Ctrl to choose more than one):</label><br>
+            <select id="department" name="departments" size="6" multiple>
+              <optgroup label="Technical">
+                <option value="web">Web Development</option>
+                <option value="data">Data Analysis</option>
+                <option value="qa">Quality Assurance</option>
+              </optgroup>
+              <optgroup label="Creative">
+                <option value="design">Graphic Design</option>
+                <option value="content">Content Writing</option>
+              </optgroup>
+              <optgroup label="Business">
+                <option value="marketing">Digital Marketing</option>
+                <option value="hr">Human Resources</option>
+              </optgroup>
+            </select>
+          </p>
+        </fieldset>
+
+        <br>
+
+        <!-- ================= Links and Files ================= -->
+        <fieldset>
+          <legend>Portfolio and Resume</legend>
+
+          <p>
+            <label for="portfolio">Portfolio URL:</label><br>
+            <input type="url" id="portfolio" name="portfolio" placeholder="https://www.example.com"
+                   autocomplete="url" size="40">
+          </p>
+
+          <p>
+            <label for="resume">Upload Resume (required, PDF or Word only):</label><br>
+            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+          </p>
+
+          <p>
+            <label for="certificates">Upload Certificates (optional, you can select several):</label><br>
+            <input type="file" id="certificates" name="certificates"
+                   accept=".pdf,.jpg,.jpeg,.png" multiple>
+          </p>
+        </fieldset>
+
+        <br>
+
+        <!-- ================= Checkboxes ================= -->
+        <fieldset>
+          <legend>Interests and Agreement</legend>
+
+          <p>Which areas interest you? (choose any)</p>
+          <ul>
+            <li>
+              <input type="checkbox" id="int-html" name="interests" value="html-css">
+              <label for="int-html">HTML and CSS</label>
+            </li>
+            <li>
+              <input type="checkbox" id="int-js" name="interests" value="javascript">
+              <label for="int-js">JavaScript</label>
+            </li>
+            <li>
+              <input type="checkbox" id="int-ui" name="interests" value="ui-ux" checked>
+              <label for="int-ui">UI / UX Design</label>
+            </li>
+            <li>
+              <input type="checkbox" id="int-db" name="interests" value="databases">
+              <label for="int-db">Databases</label>
+            </li>
+          </ul>
+
+          <p>
+            <input type="checkbox" id="terms" name="terms" value="accepted" required>
+            <label for="terms">
+              I agree to the <a href="#terms-info">terms and conditions</a> (required).
+            </label>
+          </p>
+        </fieldset>
+
+        <br>
+
+        <p>
+          <button type="submit">Submit Registration</button>
+          <button type="reset">Reset Form</button>
+        </p>
+
+      </form>
+    </section>
+
+    <hr>
+
+    <!-- ================= Summary Table ================= -->
+    <section id="courses">
+      <h2>Course and Education Summary</h2>
+
+      <table border="1" cellpadding="6" cellspacing="0">
+        <caption>Internship Course Plan</caption>
+
+        <colgroup>
+          <col span="1">
+          <col span="1">
+          <col span="1">
+          <col span="1">
+        </colgroup>
+
+        <thead>
+          <tr>
+            <th scope="col">Course</th>
+            <th scope="col">Level</th>
+            <th scope="col">Duration</th>
+            <th scope="col">Credit Hours</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>HTML Fundamentals</td>
+            <td>Beginner</td>
+            <td>2 Weeks</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>Tables and Forms</td>
+            <td>Beginner</td>
+            <td>2 Weeks</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>Responsive Layouts</td>
+            <td>Intermediate</td>
+            <td>3 Weeks</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>Version Control with Git</td>
+            <td>Intermediate</td>
+            <td>2 Weeks</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>Final Capstone Project</td>
+            <td>Advanced</td>
+            <td>4 Weeks</td>
+            <td>4</td>
+          </tr>
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <th scope="row" colspan="2">Total</th>
+            <td>13 Weeks</td>
+            <td>13</td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <section id="terms-info">
+      <h3>Terms and Conditions</h3>
+      <p>
+        By registering, you confirm that all the information you have given is correct
+        and that you will attend the sessions you have chosen.
+      </p>
+      <ol>
+        <li>Your data is used only for internship management.</li>
+        <li>Attendance in at least 80% of sessions is required.</li>
+        <li>Certificates are issued after the capstone project is approved.</li>
+      </ol>
+    </section>
+
+  </main>
+
+  <footer>
+    <hr>
+    <p>
+      Questions? Write to
+      <a href="mailto:internships@example.com">internships@example.com</a>.
+    </p>
+  </footer>
+
+</body>
+</html>
